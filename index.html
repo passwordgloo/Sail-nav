@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
-    <title>Heo的生活导航</title>
+    <title>云帆导航</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <link href="/fonts/remixicon.css" rel="stylesheet">
     <script src="/js/heolink.js"></script>
     <script src="/js/main.js"></script>
@@ -20,7 +21,7 @@
                 <a class="show_nav" onclick="showNav()" href="javascript:void(0)">
                     <i class="ri-menu-line"></i>
                 </a>
-                <a class="nav_site_name" href="/#">Heo的生活导航</a>
+                <a class="nav_site_name" href="/#">风儿飘飘</a>
             </div>
 
             <div class="nav_list" id="nav_list">
@@ -32,10 +33,10 @@
 
 
                     <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="我的应用" href="javascript:void(0)"
+                        <a class="left_nav_link_group_title" data-target="我的站点" href="javascript:void(0)"
                             onclick="hideNav()">
                             <i class="ri-command-line"></i>
-                            <span>我的应用</span>
+                            <span>我的站点</span>
                         </a>
                     </div>
 
@@ -48,10 +49,10 @@
                     </div>
 
                     <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="自建服务" href="javascript:void(0)"
+                        <a class="left_nav_link_group_title" data-target="实用工具" href="javascript:void(0)"
                             onclick="hideNav()">
                             <i class="ri-magic-fill"></i>
-                            <span>自建服务</span>
+                            <span>实用工具</span>
                         </a>
                     </div>
 
@@ -64,10 +65,10 @@
                     </div>
 
                     <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="运营链接" href="javascript:void(0)"
+                        <a class="left_nav_link_group_title" data-target="学习资源" href="javascript:void(0)"
                             onclick="hideNav()">
                             <i class="ri-mac-fill"></i>
-                            <span>运营链接</span>
+                            <span>学习资源</span>
                         </a>
                     </div>
 
@@ -91,7 +92,7 @@
                         <a class="left_nav_link_group_title notneedjump"
                             onclick="postChatUser.setPostChatTag('chat');return false;">
                             <i class="ri-chat-ai-fill"></i>
-                            <span>智能对话</span>
+                            <span>V 0.0.2</span>
                         </a>
                     </div>
 
@@ -100,7 +101,7 @@
                 <div class="footer">
                     <div class="footer_icp_group">
                         <a href="https://beian.miit.gov.cn/">
-
+                            🔒 站点已备案
                         </a>
 
                     </div>
@@ -125,7 +126,7 @@
                     <div class="linkPage_content">
                         <div class="site_info_group">
                             <div class="site_info_text">
-                                <h1 class="site_info_group_title">Heo的生活导航</h1>
+                                <h1 class="site_info_group_title">Igloo的杂物铺</h1>
                                 <span class="site_info_group_desc">分享有趣的站点</span>
                             </div>
                             <img class="site_info_group_back_cover" src="/images/cover.jpg" alt="cover" />
@@ -133,101 +134,69 @@
                         <div class="link_group">
                             <div class="link_group_title_content">
                                 <i class="ri-command-line"></i>
-                                <h2 class="link_group_title" id="我的应用">我的应用</h2>
+                                <h2 class="link_group_title" id="我的站点">我的站点</h2>
                             </div>
 
                             <div class="link_group_content">
                                 <a class="link_group_content_link" :key="i"
-                                    href="https://blog.zhheo.com/p/671f98c8.html" target="_blank">
+                                    href="https://wiki.iglooblog.top" target="_blank">
                                     <div class="link_group_content_item">
                                         <div class="link_group_content_item_logo">
                                             <img class="link_group_content_item_logo_img"
-                                                src="https://zhheo.com/img/%E6%95%B2%E6%9C%A8%E9%B1%BC.webp" alt="敲木鱼"
+                                                src="/images/wiki.webp" alt="万象"
                                                 loading="lazy" />
                                         </div>
                                         <div class="link_group_content_item_info">
                                             <div class="link_group_content_item_info_content">
-                                                <p class="link_group_content_item_info_content_title">敲木鱼</p>
-                                                <p class="link_group_content_item_info_content_description">将世间万物化作电子木鱼
+                                                <p class="link_group_content_item_info_content_title">万象文库</p>
+                                                <p class="link_group_content_item_info_content_description">森罗万象，百科全书
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </a><a class="link_group_content_link" :key="i"
-                                    href="https://blog.zhheo.com/p/4db484b3.html" target="_blank">
+                                    href="https://law.iglooblog.top" target="_blank">
                                     <div class="link_group_content_item">
                                         <div class="link_group_content_item_logo">
                                             <img class="link_group_content_item_logo_img"
-                                                src="https://zhheo.com/img/%E8%BD%BB%E8%8A%82%E9%A3%9F.webp" alt="轻节食"
+                                                src="/images/law.webp" alt="彗星"
                                                 loading="lazy" />
                                         </div>
                                         <div class="link_group_content_item_info">
                                             <div class="link_group_content_item_info_content">
-                                                <p class="link_group_content_item_info_content_title">轻节食</p>
-                                                <p class="link_group_content_item_info_content_description">科学制定断食计划</p>
+                                                <p class="link_group_content_item_info_content_title">彗星文库</p>
+                                                <p class="link_group_content_item_info_content_description">法律法规资料库</p>
                                             </div>
                                         </div>
                                     </div>
                                 </a><a class="link_group_content_link" :key="i"
-                                    href="https://apps.apple.com/cn/app/id6470105015" target="_blank">
+                                    href="https://tide.iglooblog.top" target="_blank">
                                     <div class="link_group_content_item">
                                         <div class="link_group_content_item_logo">
                                             <img class="link_group_content_item_logo_img"
-                                                src="https://zhheo.com/img/DNS%E6%B5%8B%E9%80%9F.webp" alt="DNS测速"
+                                                src="/images/tide.webp" alt="听潮公考"
                                                 loading="lazy" />
                                         </div>
                                         <div class="link_group_content_item_info">
                                             <div class="link_group_content_item_info_content">
-                                                <p class="link_group_content_item_info_content_title">DNS测速</p>
-                                                <p class="link_group_content_item_info_content_description">专业的DNS测速工具
+                                                <p class="link_group_content_item_info_content_title">听潮公考</p>
+                                                <p class="link_group_content_item_info_content_description">免费考公考编资料站
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </a><a class="link_group_content_link" :key="i"
-                                    href="https://blog.zhheo.com/p/9df485ea.html" target="_blank">
+                                    href="https://nav.iglooblog.top" target="_blank">
                                     <div class="link_group_content_item">
                                         <div class="link_group_content_item_logo">
                                             <img class="link_group_content_item_logo_img"
-                                                src="https://zhheo.com/img/%E6%AF%94%E4%BE%8B%E8%AE%A1.webp" alt="比例计"
+                                                src="/images/nav.webp" alt="导航"
                                                 loading="lazy" />
                                         </div>
                                         <div class="link_group_content_item_info">
                                             <div class="link_group_content_item_info_content">
-                                                <p class="link_group_content_item_info_content_title">比例计</p>
-                                                <p class="link_group_content_item_info_content_description">设计师的高效比例计算工具
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a><a class="link_group_content_link" :key="i"
-                                    href="https://blog.zhheo.com/p/1b0d95ef.html" target="_blank">
-                                    <div class="link_group_content_item">
-                                        <div class="link_group_content_item_logo">
-                                            <img class="link_group_content_item_logo_img"
-                                                src="https://zhheo.com/img/%E6%91%B8%E9%B1%BC.webp" alt="摸鱼"
-                                                loading="lazy" />
-                                        </div>
-                                        <div class="link_group_content_item_info">
-                                            <div class="link_group_content_item_info_content">
-                                                <p class="link_group_content_item_info_content_title">摸鱼</p>
-                                                <p class="link_group_content_item_info_content_description">
-                                                    可自定义的屏幕保护动画工具</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a><a class="link_group_content_link" :key="i"
-                                    href="https://zhheo.com/img/DelSpace3.webp" target="_blank">
-                                    <div class="link_group_content_item">
-                                        <div class="link_group_content_item_logo">
-                                            <img class="link_group_content_item_logo_img"
-                                                src="https://zhheo.com/img/DelSpace3.webp" alt="DelSpace"
-                                                loading="lazy" />
-                                        </div>
-                                        <div class="link_group_content_item_info">
-                                            <div class="link_group_content_item_info_content">
-                                                <p class="link_group_content_item_info_content_title">DelSpace</p>
-                                                <p class="link_group_content_item_info_content_description">文本自动化处理工具
+                                                <p class="link_group_content_item_info_content_title">云帆导航</p>
+                                                <p class="link_group_content_item_info_content_description">去我的收藏夹吃灰吧
                                                 </p>
                                             </div>
                                         </div>
@@ -243,12 +212,12 @@
                                 </div>
 
                                 <div class="link_group_content">
-                                    <a class="link_group_content_link" :key="i" href="https://blog.zhheo.com/"
+                                    <a class="link_group_content_link" :key="i" href="https://iglooblog.top:82"
                                         target="_blank">
                                         <div class="link_group_content_item">
                                             <div class="link_group_content_item_logo">
                                                 <img class="link_group_content_item_logo_img"
-                                                    src="https://zhheo.com/img/%E5%8D%9A%E5%AE%A2.webp" alt="博客"
+                                                    src="/images/blog.webp" alt="博客"
                                                     loading="lazy" />
                                             </div>
                                             <div class="link_group_content_item_info">
@@ -258,50 +227,34 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a><a class="link_group_content_link" :key="i" href="https://afdian.com/a/zhheo"
+                                    </a><a class="link_group_content_link" :key="i" href="http://101.132.99.30:5212"
                                         target="_blank">
                                         <div class="link_group_content_item">
                                             <div class="link_group_content_item_logo">
                                                 <img class="link_group_content_item_logo_img"
-                                                    src="https://zhheo.com/img/%E7%88%B1%E5%8F%91%E7%94%B5.webp"
-                                                    alt="爱发电" loading="lazy" />
+                                                    src="/images/cloud.webp"
+                                                    alt="网盘" loading="lazy" />
                                             </div>
                                             <div class="link_group_content_item_info">
                                                 <div class="link_group_content_item_info_content">
-                                                    <p class="link_group_content_item_info_content_title">爱发电</p>
+                                                    <p class="link_group_content_item_info_content_title">网盘</p>
                                                     <p class="link_group_content_item_info_content_description">
-                                                        分享有趣又有料的文章与资源</p>
+                                                        </p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </a><a class="link_group_content_link" :key="i" href="https://plog.zhheo.com/"
+                                    </a><a class="link_group_content_link" :key="i" href="https://media.iglooblog.top"
                                         target="_blank">
                                         <div class="link_group_content_item">
                                             <div class="link_group_content_item_logo">
                                                 <img class="link_group_content_item_logo_img"
-                                                    src="https://zhheo.com/img/%E5%9B%BE%E9%9B%86.webp" alt="图集"
+                                                    src="/images/bee.webp" alt="影视"
                                                     loading="lazy" />
                                             </div>
                                             <div class="link_group_content_item_info">
                                                 <div class="link_group_content_item_info_content">
-                                                    <p class="link_group_content_item_info_content_title">图集</p>
-                                                    <p class="link_group_content_item_info_content_description">分享生活的小事
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a><a class="link_group_content_link" :key="i" href="https://wechat.zhheo.com/"
-                                        target="_blank">
-                                        <div class="link_group_content_item">
-                                            <div class="link_group_content_item_logo">
-                                                <img class="link_group_content_item_logo_img"
-                                                    src="https://zhheo.com/img/%E5%85%AC%E4%BC%97%E5%8F%B7.webp"
-                                                    alt="公众号" loading="lazy" />
-                                            </div>
-                                            <div class="link_group_content_item_info">
-                                                <div class="link_group_content_item_info_content">
-                                                    <p class="link_group_content_item_info_content_title">公众号</p>
-                                                    <p class="link_group_content_item_info_content_description">第一时间获取动态
+                                                    <p class="link_group_content_item_info_content_title">媒体</p>
+                                                    <p class="link_group_content_item_info_content_description">图书音乐影视
                                                     </p>
                                                 </div>
                                             </div>
@@ -313,55 +266,55 @@
                                 <div class="link_group">
                                     <div class="link_group_title_content">
                                         <i class="ri-magic-fill"></i>
-                                        <h2 class="link_group_title" id="自建服务">自建服务</h2>
+                                        <h2 class="link_group_title" id="实用工具">实用工具</h2>
                                     </div>
 
                                     <div class="link_group_content">
-                                        <a class="link_group_content_link" :key="i" href="https://icon.zhheo.com/#!/"
+                                        <a class="link_group_content_link" :key="i" href="https://similarsites.com"
                                             target="_blank">
                                             <div class="link_group_content_item">
                                                 <div class="link_group_content_item_logo">
                                                     <img class="link_group_content_item_logo_img"
-                                                        src="/upload/787defba-6f64-4440-821b-3f9f95a403a6.webp"
+                                                        src="https://favicon.im/similarsites.com"
                                                         alt="应用图标库" loading="lazy" />
                                                 </div>
                                                 <div class="link_group_content_item_info">
                                                     <div class="link_group_content_item_info_content">
-                                                        <p class="link_group_content_item_info_content_title">应用图标库</p>
+                                                        <p class="link_group_content_item_info_content_title">similar sites</p>
                                                         <p class="link_group_content_item_info_content_description">
-                                                            快速获取应用图标图片</p>
+                                                            同类型站点搜索</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a><a class="link_group_content_link" :key="i" href="https://chat.zhheo.com/"
+                                        </a><a class="link_group_content_link" :key="i" href="https://flourish.studio"
                                             target="_blank">
                                             <div class="link_group_content_item">
                                                 <div class="link_group_content_item_logo">
-                                                    <img class="link_group_content_item_logo_img" src="/upload/gpt.webp"
+                                                    <img class="link_group_content_item_logo_img" src="https://favicon.im/flourish.studio"
                                                         alt="HeoChat" loading="lazy" />
                                                 </div>
                                                 <div class="link_group_content_item_info">
                                                     <div class="link_group_content_item_info_content">
-                                                        <p class="link_group_content_item_info_content_title">HeoChat
+                                                        <p class="link_group_content_item_info_content_title">flourish
                                                         </p>
                                                         <p class="link_group_content_item_info_content_description">
-                                                            免费GPT对话公益服务</p>
+                                                            数据可视化网站</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </a><a class="link_group_content_link" :key="i" href="https://b.zhheo.com/"
+                                        </a><a class="link_group_content_link" :key="i" href="https://toolfk.com"
                                             target="_blank">
                                             <div class="link_group_content_item">
                                                 <div class="link_group_content_item_logo">
                                                     <img class="link_group_content_item_logo_img"
-                                                        src="https://api.zhheo.com/favicon/get.php?url=https://b.zhheo.com/"
-                                                        alt="B站摘要生成" loading="lazy" />
+                                                        src="https://favicon.im/toolfk.com"
+                                                        alt="维修" loading="lazy" />
                                                 </div>
                                                 <div class="link_group_content_item_info">
                                                     <div class="link_group_content_item_info_content">
-                                                        <p class="link_group_content_item_info_content_title">B站摘要生成</p>
+                                                        <p class="link_group_content_item_info_content_title">toolfk</p>
                                                         <p class="link_group_content_item_info_content_description">
-                                                            通过AI将视频转换为摘要笔记，公益服务</p>
+                                                            一站式工具包</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -376,27 +329,12 @@
                                         </div>
 
                                         <div class="link_group_content">
-                                            <a class="link_group_content_link" :key="i" href="/archives/hello-halo">
-                                                <div class="link_group_content_item">
-                                                    <div class="link_group_content_item_logo">
-                                                        <img class="link_group_content_item_logo_img"
-                                                            src="/upload/logo.jpg" alt="文章演示" loading="lazy" />
-                                                    </div>
-                                                    <div class="link_group_content_item_info">
-                                                        <div class="link_group_content_item_info_content">
-                                                            <p class="link_group_content_item_info_content_title">文章演示
-                                                            </p>
-                                                            <p class="link_group_content_item_info_content_description">
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a><a class="link_group_content_link" :key="i"
+                                            <a class="link_group_content_link" :key="i"
                                                 href="https://www.pinterest.com/" target="_blank">
                                                 <div class="link_group_content_item">
                                                     <div class="link_group_content_item_logo">
                                                         <img class="link_group_content_item_logo_img"
-                                                            src="/upload/pinterest-icon-512x512-3vn0ggs9.png"
+                                                            src="https://favicon.im/pinterest.com"
                                                             alt="Pinterest" loading="lazy" />
                                                     </div>
                                                     <div class="link_group_content_item_info">
@@ -413,7 +351,7 @@
                                                 <div class="link_group_content_item">
                                                     <div class="link_group_content_item_logo">
                                                         <img class="link_group_content_item_logo_img"
-                                                            src="/upload/dribbble-5-logo-png-transparent.png"
+                                                            src="https://favicon.im/dribbble.com"
                                                             alt="Dribbble" loading="lazy" />
                                                     </div>
                                                     <div class="link_group_content_item_info">
@@ -425,23 +363,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </a><a class="link_group_content_link" :key="i"
-                                                href="https://www.behance.net/" target="_blank">
-                                                <div class="link_group_content_item">
-                                                    <div class="link_group_content_item_logo">
-                                                        <img class="link_group_content_item_logo_img"
-                                                            src="/upload/Behance-Emblem.png" alt="Behance"
-                                                            loading="lazy" />
-                                                    </div>
-                                                    <div class="link_group_content_item_info">
-                                                        <div class="link_group_content_item_info_content">
-                                                            <p class="link_group_content_item_info_content_title">
-                                                                Behance</p>
-                                                            <p class="link_group_content_item_info_content_description">
-                                                                Adobe旗下设计作品发布网站</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </a>
                                         </div>
 
@@ -449,49 +370,48 @@
                                         <div class="link_group">
                                             <div class="link_group_title_content">
                                                 <i class="ri-mac-fill"></i>
-                                                <h2 class="link_group_title" id="运营链接">运营链接</h2>
+                                                <h2 class="link_group_title" id="学习资源">学习资源</h2>
                                             </div>
 
                                             <div class="link_group_content">
                                                 <a class="link_group_content_link" :key="i"
-                                                    href="https://mp.weixin.qq.com/" target="_blank">
+                                                href="https://www.classcentral.com" target="_blank">
                                                     <div class="link_group_content_item">
                                                         <div class="link_group_content_item_logo">
                                                             <img class="link_group_content_item_logo_img"
-                                                                src="/upload/aa34c55c-fb37-4ba9-a9f5-1a94210a497c.png"
+                                                                src="https://favicon.im/classcentral.com"
                                                                 alt="微信公众号" loading="lazy" />
                                                         </div>
                                                         <div class="link_group_content_item_info">
                                                             <div class="link_group_content_item_info_content">
                                                                 <p class="link_group_content_item_info_content_title">
-                                                                    微信公众号</p>
+                                                                    classcentral</p>
                                                                 <p
                                                                     class="link_group_content_item_info_content_description">
-                                                                    腾讯微信公众号开放平台</p>
+                                                                    全球最大的课程学习网站</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </a><a class="link_group_content_link" :key="i"
-                                                    href="https://cloud.tencent.com/" target="_blank">
+                                                    href="https://www.lingohut.com/zh" target="_blank">
                                                     <div class="link_group_content_item">
                                                         <div class="link_group_content_item_logo">
                                                             <img class="link_group_content_item_logo_img"
-                                                                src="https://api.zhheo.com/favicon/get.php?url=https://cloud.tencent.com/"
-                                                                alt="腾讯云" loading="lazy" />
+                                                                src="https://favicon.im/lingohut.com"
+                                                                alt="微信公众号" loading="lazy" />
                                                         </div>
                                                         <div class="link_group_content_item_info">
                                                             <div class="link_group_content_item_info_content">
                                                                 <p class="link_group_content_item_info_content_title">
-                                                                    腾讯云</p>
+                                                                    lingohut</p>
                                                                 <p
                                                                     class="link_group_content_item_info_content_description">
-                                                                    这个图标使用api来获取</p>
+                                                                    免费学习超过45种外语</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
-
 
                                             <div class="link_group">
                                                 <div class="link_group_title_content">
@@ -505,7 +425,7 @@
                                                         <div class="link_group_content_item">
                                                             <div class="link_group_content_item_logo">
                                                                 <img class="link_group_content_item_logo_img"
-                                                                    src="/upload/87d820fb-161b-4eb9-b52b-790703ef34b8.png"
+                                                                    src="https://favicon.im/iconfont.cn"
                                                                     alt="Iconfont" loading="lazy" />
                                                             </div>
                                                             <div class="link_group_content_item_info">
@@ -524,7 +444,7 @@
                                                         <div class="link_group_content_item">
                                                             <div class="link_group_content_item_logo">
                                                                 <img class="link_group_content_item_logo_img"
-                                                                    src="/upload/5968763.png" alt="Unsplash"
+                                                                    src="https://favicon.im/unsplash.com" alt="Unsplash"
                                                                     loading="lazy" />
                                                             </div>
                                                             <div class="link_group_content_item_info">
@@ -543,7 +463,7 @@
                                                         <div class="link_group_content_item">
                                                             <div class="link_group_content_item_logo">
                                                                 <img class="link_group_content_item_logo_img"
-                                                                    src="/upload/下载.png" alt="Pexels" loading="lazy" />
+                                                                    src="https://favicon.im/pexels.com" alt="Pexels" loading="lazy" />
                                                             </div>
                                                             <div class="link_group_content_item_info">
                                                                 <div class="link_group_content_item_info_content">
@@ -568,40 +488,40 @@
 
                                                     <div class="link_group_content">
                                                         <a class="link_group_content_link" :key="i"
-                                                            href="https://www.midjourney.com/home" target="_blank">
+                                                            href="https://teee.ai" target="_blank">
                                                             <div class="link_group_content_item">
                                                                 <div class="link_group_content_item_logo">
                                                                     <img class="link_group_content_item_logo_img"
-                                                                        src="/upload/Midjourney_Emblem.jpg"
+                                                                        src="https://favicon.im/tree.ai"
                                                                         alt="Midjourney" loading="lazy" />
                                                                 </div>
                                                                 <div class="link_group_content_item_info">
                                                                     <div class="link_group_content_item_info_content">
                                                                         <p
                                                                             class="link_group_content_item_info_content_title">
-                                                                            Midjourney</p>
+                                                                            tree.ai</p>
                                                                         <p
                                                                             class="link_group_content_item_info_content_description">
-                                                                            最强大的AI绘画工具</p>
+                                                                            代码AI生成网站</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </a><a class="link_group_content_link" :key="i"
-                                                            href="https://chat.openai.com/" target="_blank">
+                                                            href="https://pai.video/onboard" target="_blank">
                                                             <div class="link_group_content_item">
                                                                 <div class="link_group_content_item_logo">
                                                                     <img class="link_group_content_item_logo_img"
-                                                                        src="/upload/chatgpt-logo-chat-gpt-icon-on-black-background-free-vector.jpg"
+                                                                        src="https://favicon.im/pai.video"
                                                                         alt="ChatGPT" loading="lazy" />
                                                                 </div>
                                                                 <div class="link_group_content_item_info">
                                                                     <div class="link_group_content_item_info_content">
                                                                         <p
                                                                             class="link_group_content_item_info_content_title">
-                                                                            ChatGPT</p>
+                                                                            pai.video</p>
                                                                         <p
                                                                             class="link_group_content_item_info_content_description">
-                                                                            最好用的AI对话助理</p>
+                                                                            支持AI文生成视频</p>
                                                                     </div>
                                                                 </div>
                                                             </div>

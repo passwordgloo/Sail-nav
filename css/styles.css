@@ -351,7 +351,7 @@ img.site_info_group_back_cover {
     font-weight: bold;
     margin: 0;
     z-index: 1;
-    color: var(--heo-white);
+    color: var(--heo-shadow-green);
 }
 
 .site_info_text {
@@ -366,7 +366,7 @@ img.site_info_group_back_cover {
 span.site_info_group_desc {
     z-index: 1;
     max-width: 400px;
-    color: var(--heo-white);
+    color: var(--heo-fontcolor);
     opacity: 0.8;
 }
 
