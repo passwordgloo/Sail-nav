@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,19 +10,16 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <link href="/fonts/remixicon.css" rel="stylesheet">
-    <!-- <script src="/js/heolink.js"></script> -->
-    <script src="/js/main.js"></script>
-    <script src="/js/pjax.js"></script>
 </head>
 
 <body style="background-color: #f2f2f2">
     <section>
         <div class="heolink_site">
             <div class="nav">
-                <a class="show_nav" onclick="showNav()" href="javascript:void(0)">
+                <a class="show_nav">
                     <i class="ri-menu-line"></i>
                 </a>
-                <a class="nav_site_name" href="/#">风儿飘飘</a>
+                <a class="nav_site_name" href="/#">云帆导航</a>
             </div>
 
             <div class="nav_list" id="nav_list">
@@ -30,90 +28,82 @@
                 </a>
                 <div class="left_nav_group" id="left_nav_group">
 
+                <div class="left_nav_item">
+                    <a class="left_nav_link_group_title" data-target="我的站点" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                        <i class="ri-apps-fill"></i>
+                        <span>我的站点</span>
+                    </a>
+                </div>
 
+                <div class="left_nav_item">
+                    <a class="left_nav_link_group_title" data-target="媒体" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                        <i class="ri-vidicon-fill"></i>
+                        <span>媒体</span>
+                    </a>
+                </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="我的站点" href="javascript:void(0)"
-                            onclick="hideNav()">
-                            <i class="ri-command-line"></i>
-                            <span>我的站点</span>
-                        </a>
-                    </div>
+            <div class="left_nav_item">
+                <a class="left_nav_link_group_title" data-target="实用工具" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                    <i class="ri-tools-fill"></i>
+                    <span>实用工具</span>
+                </a>
+            </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="媒体" href="javascript:void(0)"
-                            onclick="hideNav()">
-                            <i class="ri-vidicon-fill"></i>
-                            <span>媒体</span>
-                        </a>
-                    </div>
+            <div class="left_nav_item">
+                <a class="left_nav_link_group_title" data-target="设计网站" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                    <i class="ri-paint-brush-fill"></i>
+                    <span>设计网站</span>
+                </a>
+            </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="实用工具" href="javascript:void(0)"
-                            onclick="hideNav()">
-                            <i class="ri-magic-fill"></i>
-                            <span>实用工具</span>
-                        </a>
-                    </div>
+            <div class="left_nav_item">
+                <a class="left_nav_link_group_title" data-target="学习资源" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                    <i class="ri-mac-fill"></i>
+                    <span>学习资源</span>
+                </a>
+            </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="设计网站" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
-                            <i class="ri-paint-brush-fill"></i>
-                            <span>设计网站</span>
-                        </a>
-                    </div>
+            <div class="left_nav_item">
+                <a class="left_nav_link_group_title" data-target="设计素材" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                    <i class="ri-landscape-fill"></i>
+                    <span>设计素材</span>
+                </a>
+            </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="学习资源" href="javascript:void(0)"
-                            onclick="hideNav()">
-                            <i class="ri-mac-fill"></i>
-                            <span>学习资源</span>
-                        </a>
-                    </div>
+            <div class="left_nav_item">
+                <a class="left_nav_link_group_title" data-target="AI工具" href="javascript:void(0)" onclick="scrollToLinkGroup(this)">
+                    <i class="ri-robot-fill"></i>
+                    <span>AI工具</span>
+                </a>
+            </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="设计素材" href="javascript:void(0)"
-                            onclick="hideNav()">
-                            <i class="ri-landscape-fill"></i>
-                            <span>设计素材</span>
-                        </a>
-                    </div>
+            <div class="left_nav_item nav_postchat">
+                <a class="left_nav_link_group_title notneedjump"
+                    onclick="postChatUser.setPostChatTag('chat');return false;">
+                    <i class="ri-price-tag-3-fill"></i>
+                    <span>V 0.0.4</span>
+                </a>
+            </div>
 
-                    <div class="left_nav_item">
-                        <a class="left_nav_link_group_title" data-target="AI工具" href="javascript:void(0)"
-                            onclick="hideNav()">
-                            <i class="ri-robot-fill"></i>
-                            <span>AI工具</span>
-                        </a>
-                    </div>
+            </div>
 
-                    <div class="left_nav_item nav_postchat">
-                        <a class="left_nav_link_group_title notneedjump"
-                            onclick="postChatUser.setPostChatTag('chat');return false;">
-                            <i class="ri-chat-ai-fill"></i>
-                            <span>V 0.0.3</span>
-                        </a>
-                    </div>
+            <div class="footer">
+                <div class="footer_icp_group">
+                    <a href="https://beian.miit.gov.cn/">
+                        🔒 站点已备案
+                    </a>
 
                 </div>
 
-                <div class="footer">
-                    <div class="footer_icp_group">
-                        <a href="https://beian.miit.gov.cn/">
-                            🔒 站点已备案
-                        </a>
-
-                    </div>
-
-                    <div class="footer_console">
-                        <a href="/login?redirect_uri=/" target="_self" title="管理后台" data-pjax-state="external">
-                            <i class="ri-settings-4-fill"></i>
-                        </a>
-                        <a href="https://github.com/zhheo/halo-theme-heolink" target="_blank" class="theme_info"
-                            title="Theme HeoLink by Halo">Theme HeoLink by Halo</a>
-                    </div>
-
+                <div class="footer_console">
+                    <a href="/login?redirect_uri=/" target="_self" title="管理后台" data-pjax-state="external">
+                        <i class="ri-settings-4-fill"></i>
+                    </a>
+                    <a href="https://github.com/zhheo/halo-theme-heolink" target="_blank" class="theme_info"
+                        title="Theme HeoLink by Halo">Theme HeoLink by Halo</a>
                 </div>
+
+            </div>
 
             </div>
 

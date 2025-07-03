@@ -1,17 +1,21 @@
 // js/link-render.js
 import { linkGroups } from './links.js';
 
-const template = document.getElementById('linkGroupTemplate');
-
-document.addEventListener('DOMContentLoaded', () => {
+export function renderLinkGroups() {
     const container = document.getElementById('dynamic-links');
     if (!container) return;
+
+    // 清空容器防止重复渲染
+    container.innerHTML = '';
 
     linkGroups.forEach(group => {
         const linkGroupHTML = getLinkGroupHTML(group);
         container.insertAdjacentHTML('beforeend', linkGroupHTML);
     });
-});
+}
+
+// 初始加载时执行
+document.addEventListener('DOMContentLoaded', renderLinkGroups);
 
 function getLinkGroupHTML({ id, icon, links }) {
     const linksHTML = links.map(link => getLinkItemHTML(link)).join('');
@@ -48,8 +52,13 @@ function getLinkItemHTML({ title, desc, logo, url }) {
 }
 
 function scrollToLinkGroup(navElement) {
-    const targetId = navElement.getAttribute('data-target');
+    // 隐藏导航菜单
+    const navList = document.getElementById('nav_list');
+    if (navList && navList.classList.contains('active')) {
+        navList.classList.remove('active');
+    }
 
+    const targetId = navElement.getAttribute('data-target');
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -57,3 +66,6 @@ function scrollToLinkGroup(navElement) {
         console.warn(`找不到目标anchor ID：${targetId}`);
     }
 }
+
+// 暴露到全局作用域，使HTML中可以调用
+window.scrollToLinkGroup = scrollToLinkGroup;

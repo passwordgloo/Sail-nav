@@ -2,7 +2,7 @@
 export const linkGroups = [
     {
         id: '我的站点',
-        icon: 'ri-command-line',
+        icon: 'ri-apps-fill',
         links: [
             {
                 title: '万象文库',
@@ -54,7 +54,7 @@ export const linkGroups = [
     },
     {
         id: '实用工具',
-        icon: 'ri-magic-fill',
+        icon: 'ri-tools-fill',
         links: [
             {
                 title: 'similar sites',
