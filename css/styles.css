@@ -662,3 +662,21 @@ li {
         width: calc(100%);
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --heo-background: #0d1117;
+        --heo-fontcolor: #c9d1d9;
+        --heo-card-bg: #161b22;
+        --heo-secondbg: #1e2328;
+        --heo-card-border: #30363d;
+        --heo-theme-op: #4259ef33;
+        --heo-theme-op-deep: #4259efdd;
+        --heo-theme-op-light: #4259ef1a;
+        --heo-ahoverbg: #2d333b;
+        --heo-maskbg: rgba(13, 17, 23, 0.6);
+        --heo-maskbgdeep: rgba(13, 17, 23, 0.85);
+        --heo-shadow-border: 0 8px 16px -4px rgba(0, 0, 0, 0.15);
+        --heo-scrollbar: rgba(110, 118, 129, 0.4);
+    }
+}
