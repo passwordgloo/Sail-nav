@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>站点管理器</title>
+  <meta name="description" content="站点添加器">
+  <link rel="stylesheet" href="css/addsite.min.css">
+  <!-- <style>
+    label { display: block; margin: 10px 0 5px; }
+    input, select, button { margin-bottom: 10px; width: 100%; padding: 8px; }
+    .group-list { border: 1px solid #ccc; margin-top: 20px; padding: 10px; }
+    pre { background: #f5f5f5; padding: 10px; overflow-x: auto; }
+  </style> -->
+</head>
+
+<body>
+
+  <h1>站点管理器</h1>
+
+  <fieldset>
+    <legend>添加站点</legend>
+    <label>选择现有分组或新建</label>
+    <select id="groupSelector">
+      <option value="new">新建分组</option>
+      <!-- 选项将从 linkGroups 自动填充 -->
+    </select>
+    <input id="newGroupInput" type="text" placeholder="请输入新分组名称">
+
+    <label>分组图标（remixicon 类名）</label>
+    <input id="groupIcon" type="text" placeholder="如 ri-apps-fill">
+
+    <label>站点名称</label>
+    <input id="siteTitle" type="text" required>
+
+    <label>站点描述</label>
+    <input id="siteDesc" type="text" required>
+
+    <label>站点 URL（必须）</label>
+    <input id="siteUrl" type="text" required>
+
+    <label>图标 URL（可选，默认为 favicon）</label>
+    <input id="siteLogo" type="text" placeholder="可选">
+
+    <button id="submitSite">添加站点</button>
+  </fieldset>
+
+  <fieldset class="group-list">
+    <legend>当前分组和站点列表（可编辑）</legend>
+    <pre id="jsonPreview">
+    <!-- JSON 预览 -->
+  </pre>
+  </fieldset>
+
+  <fieldset class="group-list">
+    <legend>保存更新后的 JS 文件</legend>
+    <p>点击按钮保存当前更新为 JS 文件（不会覆盖原文件）</p>
+    <button id="saveToFile">保存链接为 JS 文件</button>
+
+    <a id="dlLink"></a>
+  </fieldset>
+
+  <script type="text/javascript">
+    // 模拟加载自 links.js 的数据（即用户原始数据）
+    const linkGroups = window['linkGroups'] || [];
+    const dlLink = document.getElementById('dlLink');
+    const groupSelector = document.getElementById('groupSelector');
+    const newGroupInput = document.getElementById('newGroupInput');
+    const groupIconInput = document.getElementById('groupIcon');
+    const siteTitleInput = document.getElementById('siteTitle');
+    const siteDescInput = document.getElementById('siteDesc');
+    const siteUrlInput = document.getElementById('siteUrl');
+    const siteLogoInput = document.getElementById('siteLogo');
+    const jsonPreview = document.getElementById('jsonPreview');
+
+    // 用于更新下拉选项与 JSON 预览
+    function updateGroupSelector() {
+      groupSelector.innerHTML = '<option value="new">新建分组</option>';
+      linkGroups.forEach(g => {
+        const opt = document.createElement('option');
+        opt.value = g.id;
+        opt.textContent = g.id;
+        groupSelector.appendChild(opt);
+      });
+    }
+
+    function previewJsonData() {
+      jsonPreview.textContent = JSON.stringify(linkGroups, null, 2);
+    }
+
+    // 自动填充初始值（从原始数据里）
+    updateGroupSelector();
+    previewJsonData();
+
+    // 添加站点逻辑
+    document.getElementById('submitSite').addEventListener('click', () => {
+      const selectedGroup = groupSelector.value;
+      const newGroupName = newGroupInput.value.trim();
+      const groupIcon = groupIconInput.value.trim();
+      const siteTitle = siteTitleInput.value.trim();
+      const siteDesc = siteDescInput.value.trim();
+      const siteUrl = siteUrlInput.value.trim();
+      const siteLogo = siteLogoInput.value.trim() || `https://favicon.im/${new URL(siteUrl).hostname}`;
+
+      if (selectedGroup === 'new' && !newGroupName) {
+        alert('请为新分组输入名称');
+        return;
+      }
+      if (!siteTitle || !siteUrl) {
+        alert('站点名称和网址为必填项');
+        return;
+      }
+
+      try {
+        new URL(siteUrl);
+      } catch (e) {
+        alert('请提供完整的网址，包含 http(s)://');
+        return;
+      }
+
+      let targetGroup;
+      if (selectedGroup === 'new') {
+        targetGroup = { id: newGroupName, icon: groupIcon, links: [] };
+        linkGroups.push(targetGroup);
+      } else {
+        targetGroup = linkGroups.find(g => g.id === selectedGroup);
+      }
+
+      targetGroup.links.push({
+        title: siteTitle,
+        desc: siteDesc,
+        url: siteUrl,
+        logo: siteLogo
+      });
+
+      alert('站点已添加至：' + targetGroup.id);
+      newGroupInput.value = '';
+      groupIconInput.value = '';
+      siteTitleInput.value = '';
+      siteDescInput.value = '';
+      siteUrlInput.value = '';
+      siteLogoInput.value = '';
+
+      updateGroupSelector();
+      previewJsonData();
+    });
+
+    // 保存为 JS 文件
+    document.getElementById('saveToFile').addEventListener('click', () => {
+      const newContent = `export const linkGroups = ${JSON.stringify(linkGroups, null, 2)};`;
+      const blob = new Blob([newContent], { type: 'application/javascript' });
+      const filename = 'linkGroups.js';
+
+      if (dlLink.href) {
+        URL.revokeObjectURL(dlLink.href);
+      }
+      dlLink.href = URL.createObjectURL(blob);
+      dlLink.download = filename;
+      dlLink.textContent = '下载 ' + filename;
+      dlLink.style.display = 'block';
+      alert('数据已准备就绪，点击下方链接下载最新 JS 文件');
+    });
+
+    // 初始化时加载原始数据
+  </script>
