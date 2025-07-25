@@ -59,25 +59,25 @@ export const linkGroups = [
             {
                 title: 'similar sites',
                 desc: '同类型站点搜索',
-                logo: 'https://favicon.im/similarsites.com',
+                logo: '/images/similarsites.png',
                 url: 'https://similarsites.com'
             },
             {
                 title: 'flourish',
                 desc: '数据可视化网站',
-                logo: 'https://favicon.im/flourish.studio',
+                logo: '/images/flourish.ico',
                 url: 'https://flourish.studio'
             },
             {
                 title: 'toolfk',
                 desc: '一站式工具包',
-                logo: 'https://favicon.im/toolfk.com',
+                logo: '/images/toolfk.png',
                 url: 'https://toolfk.com'
             }
         ]
     },
     {
-        id: '设计网站',
+        id: 'UI设计',
         icon: 'ri-paint-brush-fill',
         links: [
             {
@@ -95,20 +95,74 @@ export const linkGroups = [
         ]
     },
     {
-        id: '学习资源',
-        icon: 'ri-mac-fill',
+        id: 'AI工具',
+        icon: 'ri-robot-fill',
         links: [
             {
-                title: 'classcentral',
-                desc: '全球最大的课程学习网站',
-                logo: 'https://favicon.im/classcentral.com',
-                url: 'https://www.classcentral.com'
+                title: '可灵ai',
+                desc: '支持图生视频，文生图',
+                logo: 'https://favicon.im/klingai.kuaishou.com/',
+                url: 'https://klingai.kuaishou.com'
             },
             {
-                title: 'lingohut',
-                desc: '免费学习 45 种外语',
-                logo: 'https://favicon.im/lingohut.com',
-                url: 'https://www.lingohut.com/zh'
+                title: '海螺',
+                desc: '支持图生视频，文生图',
+                logo: 'https://favicon.im/hailuoai.com/',
+                url: 'https://hailuoai.com/'
+            },
+            {
+                title: 'VIDU',
+                desc: '支持图生视频，文生图',
+                logo: 'https://favicon.im/vidu.cn/',
+                url: 'https://www.vidu.cn/'
+            },
+            {
+                title: '即梦',
+                desc: '支持图生视频，文生图',
+                logo: 'https://favicon.im/jimeng.jianying.com/',
+                url: 'https://jimeng.jianying.com/ai-tool/home'
+            },
+            {
+                title: 'Deepseek',
+                desc: '国产AI扛把子',
+                logo: 'https://favicon.im/deepseek.com/',
+                url: 'https://www.deepseek.com/'
+            },
+            {
+                title: '豆包',
+                desc: '支持文生图，ai对话更拟人',
+                logo: 'https://favicon.im/doubao.com/',
+                url: 'https://www.doubao.com/'
+            },
+            {
+                title: 'Kimi',
+                desc: 'AI+PPT我看行',
+                logo: 'https://favicon.im/kim.kuaishou.com/',
+                url: 'https://kim.kuaishou.com/'
+            },
+            {
+                title: '飞书',
+                desc: '让文档支持AI',
+                logo: 'https://favicon.im/feishu.cn/',
+                url: 'https://www.feishu.cn/'
+            },
+            {
+                title: 'suno ai',
+                desc: '支持多种曲风，多国语言',
+                logo: 'https://favicon.im/suno.cn/',
+                url: 'https://www.suno.cn/'
+            },
+            {
+                title: '海绵音乐',
+                desc: '国内ai音乐平台',
+                logo: 'https://favicon.im/haimian.com/',
+                url: 'https://www.haimian.com/create/'
+            },
+            {
+                title: '智声云配',
+                desc: '克隆配音',
+                logo: 'https://favicon.im/dubbingx.com/',
+                url: 'https://www.dubbingx.com/'
             }
         ]
     },
@@ -137,20 +191,20 @@ export const linkGroups = [
         ]
     },
     {
-        id: 'AI工具',
-        icon: 'ri-robot-fill',
+        id: '学习资源',
+        icon: 'ri-mac-fill',
         links: [
             {
-                title: 'tree.ai',
-                desc: '代码 AI 生成网站',
-                logo: 'https://favicon.im/tree.ai',
-                url: 'https://teee.ai'
+                title: 'classcentral',
+                desc: '全球最大的课程学习网站',
+                logo: 'https://favicon.im/classcentral.com',
+                url: 'https://www.classcentral.com'
             },
             {
-                title: 'pai.video',
-                desc: '支持 AI 文生视频',
-                logo: 'https://favicon.im/pai.video',
-                url: 'https://pai.video/onboard'
+                title: 'lingohut',
+                desc: '免费学习 45 种外语',
+                logo: 'https://favicon.im/lingohut.com',
+                url: 'https://www.lingohut.com/zh'
             }
         ]
     }
