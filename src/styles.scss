@@ -167,7 +167,7 @@ nav li {
 .site-content {
   width: 100%;
   padding: 20px;
-
+  
   @media (max-width: 768px) {
     padding: 10px;
   }
@@ -213,6 +213,7 @@ nav li {
   gap: 15px; // 减小间距以节省空间
 }
 
+// 修改site-card为水平flex布局
 .site-card {
   background-color: white;
   color: #333; // 确保文字颜色清晰
@@ -222,23 +223,30 @@ nav li {
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; // 添加背景色过渡
   cursor: pointer;
   display: flex; // 添加flex布局
-  flex-direction: column; // 垂直排列
-  align-items: center; // 水平居中对齐
-  text-align: center; // 文本居中
+  flex-direction: row; // 改为水平排列
+  align-items: center; // 垂直居中对齐
+  // 移除text-align: center，因为不需要文本居中了
 
   &:hover {
     background-color: #f5f7ff; // hover时背景色变化
-    transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    // 悬浮时为site-logo添加圆形边框
+    .site-logo {
+      border: 6px solid #4285f4; // 假设主题色是#4285f4，可根据实际情况调整
+    }
   }
 }
 
+// 调整site-logo样式
 .site-logo {
   width: 64px;
   height: 64px;
-  margin-bottom: 15px;
+  margin-right: 15px; // 右侧间距，代替原来的margin-bottom
+  margin-bottom: 0; // 重置底部间距
   overflow: hidden;
   border-radius: 50%;
+  transition: border 0.3s; // 添加边框过渡效果
 
   img {
     width: 100%;
@@ -247,7 +255,11 @@ nav li {
   }
 }
 
+// 调整site-info样式
 .site-info {
+  flex: 1; // 占据剩余空间
+  // 移除text-align: center，因为不需要文本居中了
+
   h3 {
     margin: 0 0 5px 0;
     font-size: 18px;
