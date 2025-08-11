@@ -50,9 +50,9 @@ $dark-colors: (
 // 根据当前模式获取颜色
 @function color($key) {
   @if (prefers-color-scheme: dark) {
-    @return map-get($dark-colors, $key); // 恢复为 map-get
+    @return map-get($dark-colors, $key); 
   } @else {
-    @return map-get($light-colors, $key); // 恢复为 map-get
+    @return map-get($light-colors, $key);
   }
 }
 
@@ -274,8 +274,8 @@ button {
 
 // 调整site-logo样式
 .site-logo {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   margin-right: 15px; // 右侧间距，代替原来的margin-bottom
   margin-bottom: 0; // 重置底部间距
   overflow: hidden;
@@ -295,7 +295,7 @@ button {
 
   h3 {
     margin: 0 0 5px 0;
-    font-size: 18px;
+    font-size: 16px;
     color: color(site-card-text);
   }
 
