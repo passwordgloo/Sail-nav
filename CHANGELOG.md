@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](http://101.132.99.30:8090/foresee/Sail-nav/compare/v0.0.7...v0.0.8) (2025-08-11)
+
+
+### ✨ 特性
+
+* **样式:** 重构样式系统并添加深色模式支持 ([64f9234](http://101.132.99.30:8090/foresee/Sail-nav/commit/64f923474852d474d6069c0d8455ac80d1d87169))
+
+
+### 💄 样式
+
+* 调整样式文件中的尺寸和格式 ([5ceb4d8](http://101.132.99.30:8090/foresee/Sail-nav/commit/5ceb4d894a697541dc98ca05a4194559a1cf6bfd))
+* **card:** 修改站点卡片为水平布局并添加悬停效果 ([a4e428b](http://101.132.99.30:8090/foresee/Sail-nav/commit/a4e428b022dfb4ea9db1965f46c08ec1aaa6db14))
+
 ### 0.0.7 (2025-08-06)
 
 
