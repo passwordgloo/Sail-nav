@@ -1,61 +1,26 @@
 {
-  "name": "vue",
+  "name": "sail-nav",
   "private": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
-    "release": "standard-version",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
-  },
-  "standard-version": {
-    "types": [
-      {
-        "type": "docs",
-        "section": "📝 文档",
-        "hidden": false
-      },
-      {
-        "type": "fix",
-        "section": "🐛 修复",
-        "hidden": false
-      },
-      {
-        "type": "feat",
-        "section": "✨ 特性",
-        "hidden": false
-      },
-      {
-        "type": "chore",
-        "section": "🔧 构建",
-        "hidden": false
-      },
-      {
-        "type": "build",
-        "section": "🚀 发布",
-        "hidden": false
-      },
-      {
-        "type": "style",
-        "section": "💄 样式",
-        "hidden": false
-      }
-    ]
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.17",
-    "vue-router": "^4.5.1"
+    "@vitejs/plugin-vue": "^6.0.1",
+    "pinia": "^3.0.3",
+    "sass": "^1.93.2",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.0",
-    "@vue/tsconfig": "^0.7.0",
-    "conventional-changelog-cli": "^5.0.0",
-    "sass": "^1.90.0",
-    "standard-version": "^9.5.0",
-    "typescript": "~5.8.3",
-    "vite": "^7.0.4",
-    "vue-tsc": "^2.2.12"
+    "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@7.1.14"
+    }
   }
 }
