@@ -1,14 +1,35 @@
 <template>
-  <nav class="category-nav">
-    <div class="category-scroll">
-      <div class="category-wrapper">
+  <nav 
+    :class="[
+      'sticky top-0 z-50 w-full py-4 md:py-6',
+      'backdrop-blur-[20px] backdrop-saturate-180',
+      'shadow-sm border-b',
+      isDark 
+        ? 'bg-slate-700/60 border-white/10 shadow-black/20'
+        : 'bg-white/60 border-white/30 shadow-gray-900/10'
+    ]"
+  >
+    <div class="w-full overflow-x-auto overflow-y-hidden scrollbar-hide">
+      <div class="flex gap-3 px-4 md:px-8 md:justify-center md:flex-wrap min-w-min md:gap-4">
         <button 
           v-for="category in categories" 
           :key="category.id"
-          :class="['category-btn', { active: activeCategory === category.id }]"
+          :class="[
+            'py-2 px-5 md:py-2.5 md:px-6 rounded-full',
+            'text-sm md:text-base font-medium',
+            'flex items-center gap-2 whitespace-nowrap flex-shrink-0',
+            'transition-all duration-300',
+            'backdrop-blur-[10px] backdrop-saturate-150',
+            'active:scale-95 md:hover:-translate-y-0.5',
+            activeCategory === category.id
+              ? 'bg-gradient-to-r from-[#667eea]/90 to-[#764ba2]/90 text-white border-transparent shadow-lg dark:from-[#4755a3]/90 dark:to-[#58387a]/90'
+              : isDark
+                ? 'bg-slate-600/70 text-gray-200 border border-white/10 hover:shadow-lg'
+                : 'bg-white/70 text-gray-700 border border-white/30 hover:shadow-md hover:border-[#667eea]/30'
+          ]"
           @click="selectCategory(category.id)"
         >
-          <span class="icon">{{ category.icon }}</span>
+          <span class="text-lg md:text-xl">{{ category.icon }}</span>
           <span>{{ category.name }}</span>
         </button>
       </div>
@@ -17,7 +38,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 
 defineProps({
   categories: {
@@ -26,6 +47,7 @@ defineProps({
   }
 })
 
+const isDark = inject('isDark', ref(false))
 const emit = defineEmits(['select'])
 const activeCategory = ref(null)
 
@@ -35,96 +57,13 @@ const selectCategory = (id) => {
 }
 </script>
 
-<style scoped lang="scss">
-.category-nav {
-  background: white;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
+<style scoped>
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
-  @media (min-width: 768px) {
-    padding: 1.5rem 0;
-  }
-
-  .category-scroll {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .category-wrapper {
-    display: flex;
-    gap: 0.75rem;
-    padding: 0 1rem;
-    min-width: min-content;
-
-    @media (min-width: 768px) {
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0 2rem;
-      gap: 1rem;
-    }
-  }
-
-  .category-btn {
-    padding: 0.5rem 1.25rem;
-    border: 2px solid #cbd5e0;  /* 深灰色边框 */
-    background: white;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-    color: #4a5568;  /* 深灰色文字 */
-
-    @media (min-width: 768px) {
-      padding: 0.6rem 1.5rem;
-      font-size: 0.95rem;
-      gap: 0.5rem;
-    }
-
-    .icon {
-      font-size: 1.1rem;
-
-      @media (min-width: 768px) {
-        font-size: 1.2rem;
-      }
-    }
-
-    &:active {
-      transform: scale(0.95);
-    }
-
-    &:hover {
-      border-color: #667eea;
-      color: #667eea;
-
-      @media (min-width: 768px) {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
-      }
-    }
-
-    &.active {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-    }
-  }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 </style>

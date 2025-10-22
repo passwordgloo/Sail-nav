@@ -1,43 +1,27 @@
 <template>
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 云帆导航</p>
-      <p class="made-with">Using Vue 3 + Vite 6</p>
+  <footer 
+    :class="[
+      'w-full py-8 md:py-10 text-center mt-12 md:mt-16',
+      'backdrop-blur-[20px] backdrop-saturate-180',
+      'border-t shadow-sm',
+      isDark 
+        ? 'bg-slate-700/60 border-white/10 shadow-black/20'
+        : 'bg-white/60 border-white/30 shadow-gray-900/10'
+    ]"
+  >
+    <div class="container mx-auto px-4">
+      <p :class="['text-sm md:text-base mb-2', isDark ? 'text-gray-300' : 'text-gray-600']">
+        © 2025 我的导航站
+      </p>
+      <p :class="['text-xs md:text-sm', isDark ? 'text-gray-400' : 'text-gray-500']">
+        Made with ❤️ using Vue 3 + Vite + Tailwind CSS v4
+      </p>
     </div>
   </footer>
 </template>
 
-<style scoped lang="scss">
-.footer {
-  background: white;
-  padding: 1.5rem 0;
-  text-align: center;
-  border-top: 1px solid #e2e8f0;
-  margin-top: 2rem;
-  width: 100%;
+<script setup>
+import { inject, ref } from 'vue'
 
-  @media (min-width: 768px) {
-    padding: 2rem 0;
-    margin-top: 4rem;
-  }
-
-  p {
-    margin: 0;
-    color: #718096;
-    font-size: 0.875rem;
-
-    @media (min-width: 768px) {
-      font-size: 1rem;
-    }
-
-    &.made-with {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-
-      @media (min-width: 768px) {
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-</style>
+const isDark = inject('isDark', ref(false))
+</script>
