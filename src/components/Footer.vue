@@ -11,7 +11,7 @@
   >
     <div class="container mx-auto px-4">
       <p :class="['text-sm md:text-base mb-2', isDark ? 'text-gray-300' : 'text-gray-600']">
-        © 2025 我的导航站
+        © 2025 云帆导航站
       </p>
       <p :class="['text-xs md:text-sm', isDark ? 'text-gray-400' : 'text-gray-500']">
         Made with ❤️ using Vue 3 + Vite + Tailwind CSS v4

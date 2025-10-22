@@ -14,7 +14,7 @@
       <transition name="collapse">
         <div v-show="!shouldCollapse" class="text-center mb-6 overflow-hidden">
           <h1 class="text-3xl md:text-5xl font-bold mb-2 drop-shadow-lg">
-            🌟 我的导航站
+            ☁️ 云帆导航站
           </h1>
           <p class="text-sm md:text-lg opacity-95 drop-shadow">
             <span id="jinrishici-sentence">收藏有用的网站，提高工作效率</span>
