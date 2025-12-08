@@ -1,6 +1,6 @@
 <template>
   <header 
-    class="w-full transition-all duration-300 bg-gradient-to-br from-[#667eea]/60 to-[#764ba2]/60 backdrop-blur-[30px] backdrop-saturate-200 text-white border-b shadow-lg dark:from-[#4755a3]/50 dark:to-[#58387a]/50 dark:border-white/10 dark:shadow-black/40"
+    class="w-full transition-all duration-300 dark:text-white text-gray"
     :class="shouldCollapse ? 'py-6 md:py-8' : 'py-8 md:py-12'"
   >
     <div class="container mx-auto px-4 md:px-8">

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+  <div class="min-h-screen w-full bg-[url('/snowhill.')] bg-cover bg-center bg-no-repeat bg-fixed dark:bg-[url('/river.png')]">
     <Header @search="handleSearch" />
     
     <main class="py-6 md:py-12 w-full">
@@ -69,3 +69,8 @@ const handleSearch = (query) => {
   searchQuery.value = query
 }
 </script>
+
+<style>
+
+
+</style>
