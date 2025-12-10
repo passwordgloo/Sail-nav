@@ -6,8 +6,9 @@
     <div class="container mx-auto px-4 md:px-8">
       <transition name="collapse">
         <div v-show="!shouldCollapse" class="text-center mb-6 overflow-hidden">
-          <h1 class="text-3xl md:text-5xl font-bold mb-2 drop-shadow-lg">
-            ☁️ 云帆导航站
+          <h1 class="text-3xl md:text-5xl font-bold mb-2 drop-shadow-lg flex items-center justify-center gap-2">
+            <span class="weather-icon">{{ weatherIcon }}</span>
+            <span>云帆导航站</span>
           </h1>
           <p class="text-sm md:text-lg opacity-95 drop-shadow">
             <span id="jinrishici-sentence">收藏有用的网站，提高工作效率</span>
@@ -46,6 +47,7 @@ const searchQuery = ref('')
 const isFocused = ref(false)
 const isDark = inject('isDark', ref(false))
 const emit = defineEmits(['search'])
+const weatherIcon = ref('☁️') // 默认多云图标
 
 const shouldCollapse = computed(() => {
   return isFocused.value && searchQuery.value.length === 0
@@ -65,7 +67,76 @@ const handleBlur = () => {
   }, 100)
 }
 
+// 根据天气状况获取对应的图标
+const getWeatherIcon = (weatherCondition) => {
+  const weatherMap = {
+    // 晴天
+    '晴': '☀️',
+    // 多云
+    '多云': '⛅',
+    '阴': '☁️',
+    // 雨天
+    '小雨': '🌦️',
+    '中雨': '🌧️',
+    '大雨': '🌧️',
+    '暴雨': '⛈️',
+    '雷阵雨': '⛈️',
+    '阵雨': '�️',
+    // 雪天
+    '小雪': '🌨️',
+    '中雪': '❄️',
+    '大雪': '❄️',
+    '暴雪': '❄️',
+    // 雾
+    '雾': '�️',
+    '霾': '🌫️',
+    // 大风
+    '大风': '💨',
+    '台风': '🌀'
+  }
+  
+  return weatherMap[weatherCondition] || '☁️' // 默认返回多云图标
+}
+
+// 加载UAPI SDK并获取天气数据
+const fetchWeather = async () => {
+  try {
+    // 动态加载UAPI SDK
+    const script = document.createElement('script')
+    script.src = 'https://cdn.jsdelivr.net/npm/uapi-browser-sdk@latest/dist/index.js'
+    script.type = 'module'
+    script.async = true
+    
+    // 等待SDK加载完成
+    await new Promise((resolve, reject) => {
+      script.onload = resolve
+      script.onerror = reject
+      document.head.appendChild(script)
+    })
+    
+    // 使用UAPI获取天气数据（使用默认城市北京）
+    const { UapiClient } = await import('https://cdn.jsdelivr.net/npm/uapi-browser-sdk@latest/dist/index.js')
+    const client = new UapiClient('https://api.uapis.cn', '') // UAPI无需token
+    
+    // 查询指定位置的天气
+    const weatherData = await client.misc.getMiscWeather({ city: '南京' })
+    
+    // 更新天气图标
+    if (weatherData && weatherData.weather) {
+      weatherIcon.value = getWeatherIcon(weatherData.weather)
+    }
+  } catch (error) {
+    console.error('获取天气数据失败:', error)
+    // 失败时保持默认图标
+    weatherIcon.value = '☁️'
+  }
+}
+
 onMounted(() => {
+  // 加载天气数据
+  fetchWeather()
+  
+  // 加载今日诗词
   const script = document.createElement('script')
   script.src = 'https://sdk.jinrishici.com/v2/browser/jinrishici.js'
   script.charset = 'utf-8'
