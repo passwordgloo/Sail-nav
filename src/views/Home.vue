@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full bg-[url('/light.png')] bg-cover bg-center bg-no-repeat bg-fixed dark:bg-[url('/night.png')]">
+  <div class="min-h-screen w-full bg-[url('/snowhill.png')] bg-cover bg-center bg-no-repeat bg-fixed dark:bg-[url('/night.png')]">
     <Header @search="handleSearch" />
     
     <main class="py-6 md:py-12 w-full">
